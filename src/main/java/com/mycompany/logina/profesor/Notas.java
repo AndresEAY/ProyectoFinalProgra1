@@ -28,7 +28,6 @@ public class Notas extends javax.swing.JFrame {
         jTextField2.setEditable(false);
         jTextField3.setEditable(false);
 
-        
         for (Alumno alumno : LoginA.alumnos) {
             if (alumno.carnet.equals(carnet)) {
                 alumnoSelect = alumno;
