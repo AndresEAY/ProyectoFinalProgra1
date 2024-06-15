@@ -132,6 +132,7 @@ public class AsignarAlumnoCurso extends javax.swing.JFrame {
                 break;
             }
         }
+        
 
         for (Alumno alumno : LoginA.alumnos) {
             if (alumno.nombre.equals(jComboBox2.getSelectedItem().toString())) {
