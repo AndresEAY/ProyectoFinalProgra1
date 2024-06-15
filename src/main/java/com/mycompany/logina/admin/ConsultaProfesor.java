@@ -206,9 +206,9 @@ public class ConsultaProfesor extends javax.swing.JFrame {
             while ((linea = br.readLine()) != null) {
                 String[] datos = linea.split(",");
                 Profesor p = new Profesor();
-                p.nombre = datos[0];
-                p.apellido = datos[1];
-                p.usuario = datos[2];
+                p.usuario = datos[0];
+                p.nombre = datos[1];
+                p.apellido = datos[2];
                 p.password = datos[3];
                 p.especidalidad = datos[4];
                 LoginA.profesores.add(p);
