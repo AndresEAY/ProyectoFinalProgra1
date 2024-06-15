@@ -37,10 +37,11 @@ public class MiPerfil extends javax.swing.JFrame {
 
         Double promedio = 0.0;
         for (Curso curso : alumno.cursos) {
-            promedio += alumno.nota.get(curso.getNombre());
+            promedio += alumno.nota.get(curso.getNombre()) != null 
+                    ? alumno.nota.get(curso.getNombre()) : 0.0;
         }
         promedio = promedio/alumno.cursos.size();
-        
+
         jTextField5.setText(promedio.toString());
 
         jTextField4.setText(alumno.getPassword());
