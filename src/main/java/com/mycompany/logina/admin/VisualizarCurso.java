@@ -202,14 +202,14 @@ public class VisualizarCurso extends javax.swing.JFrame {
                 JSONObject curso = (JSONObject) lista;
                 Curso c = new Curso();
 
-                c.setIdCurso((String) curso.get("id"));
-                c.setNombre((String) curso.get("nombre"));
-                c.setSeccion((String) curso.get("seccion"));
-                c.fechaInicio = formatoFecha.parse((String) curso.get("fecha_inicio"));
-                c.fechaFin = formatoFecha.parse((String) curso.get("fecha_fin"));
-                c.horaInicio = formatoHora.parse((String) curso.get("hora_inicio"));
-                c.horaFin = formatoHora.parse((String) curso.get("hora_fin"));
-                c.setProfesor((String) curso.get("profesor"));
+                c.setIdCurso(curso.get("id").toString());
+                c.setNombre(curso.get("nombre").toString());
+                c.setSeccion(curso.get("seccion").toString());
+                c.fechaInicio = formatoFecha.parse(curso.get("fecha_inicio").toString());
+                c.fechaFin = formatoFecha.parse(curso.get("fecha_fin").toString());
+                c.horaInicio = formatoHora.parse(curso.get("hora_inicio").toString());
+                c.horaFin = formatoHora.parse(curso.get("hora_fin").toString());
+                c.setProfesor(curso.get("profesor").toString());
                 
                 LoginA.cursos.add(c);
             }
