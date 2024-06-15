@@ -7,6 +7,7 @@ package com.mycompany.logina.admin;
 import com.mycompany.logina.Administrador;
 import com.mycompany.logina.Curso;
 import com.mycompany.logina.LoginA;
+import com.mycompany.logina.Profesor;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.text.ParseException;
@@ -209,9 +210,16 @@ public class VisualizarCurso extends javax.swing.JFrame {
                 c.fechaFin = formatoFecha.parse(curso.get("fecha_fin").toString());
                 c.horaInicio = formatoHora.parse(curso.get("hora_inicio").toString());
                 c.horaFin = formatoHora.parse(curso.get("hora_fin").toString());
-                c.setProfesor(curso.get("profesor").toString());
+                String profesorN = curso.get("profesor").toString();
+                c.setProfesor(profesorN);
                 
                 LoginA.cursos.add(c);
+                
+                for (Profesor profesor : LoginA.profesores){
+                    if(profesor.usuario.equals(profesorN)){
+                        profesor.cursos.add(c);
+                    }else{}
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
